@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  task_tracker_url: MyString
+  repo_url: MyString
+  active: false
+
+two:
+  name: MyString
+  task_tracker_url: MyString
+  repo_url: MyString
+  active: false
