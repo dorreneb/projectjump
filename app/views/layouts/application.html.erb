@@ -50,36 +50,20 @@
               <li><%= link_to "Start a Project", "/projects/new"  %></li>
               <!-- <li><%= link_to "", "/path3"  %></li> -->
             </ul>
+            <div id="user_nav">
+              <% if user_signed_in? %>
+                Signed in as <%= current_user.email %>. Not you?
+                <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+              <% else %>
+                <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+              <% end %>
+            </div>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
 
     <div class="container-fluid">
-
-      <!-- Alert stuff -->
-
-      <!--<p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>-->
-
-      <% unless flash[:notice].blank? %>
-        <div class="alert-message info">
-          <%= content_tag :div, flash[:notice] %>
-        </div>
-      <% end %>
-
-      <% unless flash[:error].blank? %>
-        <div class="alert-message error">
-          <%= content_tag :div, flash[:error] %>
-        </div>
-      <% end %>
-
-      <% unless flash[:alert].blank? %>
-        <div class="alert-message warning">
-          <%= content_tag :div, flash[:alert] %>
-        </div>
-      <% end %>
-
       <div class="row-fluid">
         <!--<div class="span3">
           <div class="well sidebar-nav">
