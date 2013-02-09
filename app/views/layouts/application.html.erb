@@ -35,7 +35,26 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
+    <% unless flash[:notice].blank? %>
+      <div class="alert-message info">
+        <%= content_tag :div, flash[:notice] %>
+      </div>
+    <% end %>
 
+    <% unless flash[:error].blank? %>
+      <div class="alert-message error">
+        <%= content_tag :div, flash[:error] %>
+      </div>
+    <% end %>
+
+    <% unless flash[:alert].blank? %>
+      <div class="alert-message warning">
+        <%= content_tag :div, flash[:alert] %>
+      </div>
+    <% end %>
+
+    <!-- <p class="notice"><%= notice %></p> -->
+    <!-- <p class="alert"><%= alert %></p> -->
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -44,7 +63,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="localhost:3000">Projectjump</a>
+          <a class="brand" href="/welcome/index">Projectjump</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "All Projects", "/projects"  %></li>
@@ -75,7 +94,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2013</p>
+        
       </footer>
 
     </div> <!-- /container -->
