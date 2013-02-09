@@ -35,26 +35,6 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
   </head>
   <body>
-    <% unless flash[:notice].blank? %>
-      <div class="alert-message info">
-        <%= content_tag :div, flash[:notice] %>
-      </div>
-    <% end %>
-
-    <% unless flash[:error].blank? %>
-      <div class="alert-message error">
-        <%= content_tag :div, flash[:error] %>
-      </div>
-    <% end %>
-
-    <% unless flash[:alert].blank? %>
-      <div class="alert-message warning">
-        <%= content_tag :div, flash[:alert] %>
-      </div>
-    <% end %>
-
-    <!-- <p class="notice"><%= notice %></p> -->
-    <!-- <p class="alert"><%= alert %></p> -->
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -63,7 +43,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/welcome/index">Projectjump</a>
+          <a class="brand" href="/">Projectjump</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "All Projects", "/projects"  %></li>
@@ -76,6 +56,30 @@
     </div>
 
     <div class="container-fluid">
+
+      <!-- Alert stuff -->
+
+      <!--<p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>-->
+
+      <% unless flash[:notice].blank? %>
+        <div class="alert-message info">
+          <%= content_tag :div, flash[:notice] %>
+        </div>
+      <% end %>
+
+      <% unless flash[:error].blank? %>
+        <div class="alert-message error">
+          <%= content_tag :div, flash[:error] %>
+        </div>
+      <% end %>
+
+      <% unless flash[:alert].blank? %>
+        <div class="alert-message warning">
+          <%= content_tag :div, flash[:alert] %>
+        </div>
+      <% end %>
+
       <div class="row-fluid">
         <!--<div class="span3">
           <div class="well sidebar-nav">
