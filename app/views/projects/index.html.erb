@@ -2,32 +2,23 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:task_tracker_url) %></th>
-      <th><%= model_class.human_attribute_name(:repo_url) %></th>
-      <th><%= model_class.human_attribute_name(:active) %></th>
-      <th><%= model_class.human_attribute_name(:owner_id) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
+
     <% @projects.each do |project| %>
-      <tr>
-        <td><%= link_to project.id, project_path(project) %></td>
-        <td><%= project.name %></td>
-        <td><%= project.task_tracker_url %></td>
-        <td><%= project.repo_url %></td>
-        <td><%= project.active %></td>
-        <td><%= project.owner_id %></td>
-        <td><%= project.description %></td>
-        <td><%=l project.created_at %></td>
-        <td>
+      <div class="project">
+        <h3><%= link_to project.name, project %></h3>
+        <div class="statusinfo">
+          <span class="info"><span class="miniheader">Status:</span> <%= project.active ? "Active" : "Inactive"%></span>
+          <span class="info"><span class="miniheader">Project Repository:</span> <%= project.repo_url %></span>
+          <span class="info"><span class="miniheader">Task Tracker URL:</span>  <%= project.task_tracker_url %></span>
+        </div>
+        <div class="description">
+          <div class="miniheader">Description:</div>
+          <%= project.description %>
+        </div>
+      </div> 
+      <hr/>
+     <!-- <tr>
+
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_project_path(project), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -36,10 +27,9 @@
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
         </td>
-      </tr>
+      </tr>-->
     <% end %>
-  </tbody>
-</table>
+
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_project_path,

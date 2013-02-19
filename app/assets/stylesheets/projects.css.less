@@ -1,0 +1,34 @@
+@import "elements.less";
+
+@roundedbordersize: 15px;
+@padding: 10px;
+
+.project {
+	border: 1px solid #ddd;
+	.rounded(@roundedbordersize);
+}
+
+.project h3 {
+	background: #f2f2f2;
+	margin: 0;
+	padding: @padding;
+	.border-radius(@roundedbordersize, 0, 0, @roundedbordersize);
+}
+
+.statusinfo {
+	padding: @padding;
+}
+
+.miniheader {
+	font-weight: bold;
+}
+
+.description {
+	padding: @padding;
+
+}
+
+.info {
+	width: 33%;
+	float: left;
+}

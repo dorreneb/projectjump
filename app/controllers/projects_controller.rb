@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
   before_filter :user_auth
-  skip_before_filter :user_auth, :only => :index
+  skip_before_filter :user_auth, :only => [:index, :show]
 
   # GET /projects
   # GET /projects.json
