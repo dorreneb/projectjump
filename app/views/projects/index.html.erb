@@ -1,7 +1,8 @@
 <%- model_class = Project -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-</div>
+<div class="span12">
+  <div class="page-header">
+    <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  </div>
 
     <% @projects.each do |project| %>
       <div class="project">
@@ -29,8 +30,4 @@
         </td>
       </tr>-->
     <% end %>
-
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_project_path,
-            :class => 'btn btn-primary' %>
+</div>

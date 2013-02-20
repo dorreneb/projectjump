@@ -2,6 +2,7 @@
 
 @roundedbordersize: 15px;
 @padding: 10px;
+@information-border: 1px solid #ddd;
 
 .project {
 	border: 1px solid #ddd;
@@ -31,4 +32,16 @@
 .info {
 	width: 33%;
 	float: left;
+}
+
+.information {
+	margin: 0px;
+	padding: 10px;
+	border-right: @information-border;
+	border-left: @information-border;
+	border-bottom: @information-border;
+}
+
+ul.nav {
+	margin: 0;
 }
