@@ -36,7 +36,11 @@
     </dl>
   </div>
   <div class="information" id="blog">
-    Blog will go here
+    <% @project.updates.each do |update| %>
+      <b><%= update.title %></b><br/>
+      <%= update.post %>
+      <hr/>
+    <% end %>
   </div>
 
   <!--
