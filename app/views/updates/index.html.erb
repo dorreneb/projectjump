@@ -16,13 +16,13 @@
   <tbody>
     <% @updates.each do |update| %>
       <tr>
-        <td><%= link_to update.id, update_path(update) %></td>
+        <td><%= update.id %></td>
         <td><%= update.title %></td>
         <td><%= update.post %></td>
         <td><%= update.project_id %></td>
         <td><%=l update.created_at %></td>
         <td>
-          <%= link_to 'Edit', edit_project_update_path(update.project_id, update.id) %>
+          <%= link_to 'Edit', edit_project_update_path(update.project_id, update.id)%>
           <!--<%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_update_path(update), :class => 'btn btn-mini' %> -->
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -38,5 +38,5 @@
 
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_update_path,
+            new_project_update_path(params[:project_id]),
             :class => 'btn btn-primary' %>
